@@ -10,7 +10,8 @@ import reducers from './reducers/index';
 import BookList from './components/pages/bookList';
 import BooksForm from './components/pages/bookForm';
 import Cart from './components/pages/cart';
-import Main from './main'
+import Main from './main';
+import './styles/style.css';
 
 const middleware = applyMiddleware(thunk,logger);
 const store = createStore(reducers, middleware);
