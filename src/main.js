@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Menu from './components/menu';
 import Footer from './components/footer';
 
@@ -6,11 +7,16 @@ class Main extends Component{
     render(){
         return (
             <div>
-                <Menu/>
+                <Menu cartItemsNumber={this.props.totalQty} />
                 {this.props.children}
                 <Footer/>
                 </div>
         )
     }
 }
-export default Main;
+function mapStateToProps(state){
+    return {
+      totalQty: state.carts.totalQty
+    }
+  }
+  export default connect(mapStateToProps) (Main);

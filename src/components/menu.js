@@ -20,8 +20,12 @@ class Menu extends Component{
       <Nav pullRight>
         <NavItem eventKey={1} href="/admin">Admin</NavItem>
         <NavItem eventKey={2} href="/cart">Your Cart
-          <Badge className="badge">
-            1</Badge>
+          
+        { (this.props.cartItemsNumber > 0)?( // if # of items in cart is > 0
+            <Badge className="badge">
+            {this.props.cartItemsNumber}</Badge>):('')}
+            {/* display the # of items in cart, if zero items, display nothing  :{''} */}
+
         </NavItem>
       </Nav>
     </Navbar.Collapse>
